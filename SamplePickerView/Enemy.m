@@ -57,4 +57,31 @@
     
 }
 
+-(void) getsAttackedByPlayer:(Player *)thePlayer andWeapon:(Weapon *)theWeapon andContext: (NSManagedObjectContext *) theContext {
+    
+    int damage = [thePlayer.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon getDamage];
+    
+    Element *element = theWeapon.weaponBelongsToElement;
+    
+    float weakness = [self getWeaknessForElement:element];
+    
+    float overallDamage = (float) damage/100.0 * weakness;
+    
+    self.health = [NSNumber numberWithFloat:([self.health floatValue] - overallDamage)];
+    
+    [self saveInContext:theContext];
+    
+}
+
+
+-(float) getWeaknessForElement:(Element *) theElement {
+    float result = 100;
+    for(EnemyElement * currentEnemyElement in self.enemyHasManyEnemyElements) {
+        if (currentEnemyElement.enemyElementBelongsToElement.name == theElement.name) {
+            result = [currentEnemyElement.weakness floatValue];
+        }
+    }
+    return result;
+}
+
 @end

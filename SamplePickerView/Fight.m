@@ -25,9 +25,12 @@
 }
 
 -(void) playerAttack {
-    NSLog(@"Here we put the player attack");
     
-    NSLog(@"%d",[self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon getDamage]);
+    
+    [self.currentEnemy getsAttackedByPlayer:self.player andWeapon:self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon andContext:self.managedObjectContext];
+    
+    
+    
     
 }
 

@@ -10,6 +10,7 @@
 #import "Player.h"
 #import "Enemy.h"
 #import "GameSettings.h"
+#import "Element.h"
 
 @interface Fight : NSObject
 

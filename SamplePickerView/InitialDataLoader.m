@@ -35,6 +35,8 @@
     element.imageName = @"earth.png";
     [element saveInContext:self.managedObjectContext];
     
+    NSLog(@"%@", element);
+    
     element = [Element newInContext:self.managedObjectContext];
     element.name = @"Wind";
     element.imageName = @"wind.png";
@@ -80,6 +82,7 @@
     Element * theElement;
     
     theElement = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
+    NSLog(@"%@", theElement);
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Earth Sword";
@@ -107,6 +110,8 @@
     theWeapon.imageName = @"waterSword.png";
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
+    
+    NSLog(@"%@", theWeapon.weaponBelongsToElement);
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Light Sword";

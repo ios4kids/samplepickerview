@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import "Player.h"
+#import "Enemy.h"
+#import "Element.h"
+#import "EnemyElement.h"
 
 @interface Enemy : NSManagedObject
 
@@ -34,5 +37,7 @@
 - (void)removeEnemyHasManyEnemyElementsObject:(NSManagedObject *)value;
 - (void)addEnemyHasManyEnemyElements:(NSSet *)values;
 - (void)removeEnemyHasManyEnemyElements:(NSSet *)values;
+
+-(void) getsAttackedByPlayer: (Player *) thePlayer andWeapon:(Weapon *) theWeapon andContext: (NSManagedObjectContext *) theContext;
 
 @end

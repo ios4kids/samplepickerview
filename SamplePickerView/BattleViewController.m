@@ -35,12 +35,7 @@
     
     [self.playerImageView setImage:[UIImage imageNamed:self.player.imageName]];
     [self.enemyImageView setImage:[UIImage imageNamed:self.currentEnemy.imageName]];
-    self.enemyHealth.text = [self.currentEnemy.health stringValue];
-
-    self.playerHealthLabel.text = [self.player.health stringValue];
-    
-    self.currentPlayerWeaponLabel.text = self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon.title;
-    
+    [self refreshDisplay];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +65,16 @@
     
     [fight playerAttack];
     [fight enemyAttack];
+    [self refreshDisplay];
     
+}
+
+-(void) refreshDisplay {
+    self.enemyHealth.text = [self.currentEnemy.health stringValue];
+    
+    self.playerHealthLabel.text = [self.player.health stringValue];
+    
+    self.currentPlayerWeaponLabel.text = self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon.title;
+
 }
 @end
