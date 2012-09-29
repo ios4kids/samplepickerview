@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24BF45D61617714A00D4261E /* darkSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45D51617714A00D4261E /* darkSword.png */; };
+		24BF45D91617715700D4261E /* energySword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45D81617715700D4261E /* energySword.png */; };
+		24BF45DB1617715F00D4261E /* fireSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45DA1617715F00D4261E /* fireSword.png */; };
+		24BF45DD1617716500D4261E /* iceSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45DC1617716500D4261E /* iceSword.png */; };
+		24BF45DF1617716A00D4261E /* lightSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45DE1617716A00D4261E /* lightSword.png */; };
+		24BF45E11617717500D4261E /* waterSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E01617717500D4261E /* waterSword.png */; };
+		24BF45E31617717A00D4261E /* windSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E21617717A00D4261E /* windSword.png */; };
+		24BF45E51617717E00D4261E /* woodSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E41617717E00D4261E /* woodSword.png */; };
 		24DA5A23160645B300EB1FCF /* Sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DA5A22160645B300EB1FCF /* Sword.png */; };
 		24DA5A271606499200EB1FCF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DA5A261606499200EB1FCF /* Store.m */; };
 		B614F9B51605851600400456 /* Ax.png in Resources */ = {isa = PBXBuildFile; fileRef = B614F9B41605851600400456 /* Ax.png */; };
@@ -42,6 +50,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24BF45D51617714A00D4261E /* darkSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkSword.png; sourceTree = "<group>"; };
+		24BF45D81617715700D4261E /* energySword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = energySword.png; sourceTree = "<group>"; };
+		24BF45DA1617715F00D4261E /* fireSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireSword.png; sourceTree = "<group>"; };
+		24BF45DC1617716500D4261E /* iceSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iceSword.png; sourceTree = "<group>"; };
+		24BF45DE1617716A00D4261E /* lightSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightSword.png; sourceTree = "<group>"; };
+		24BF45E01617717500D4261E /* waterSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterSword.png; sourceTree = "<group>"; };
+		24BF45E21617717A00D4261E /* windSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windSword.png; sourceTree = "<group>"; };
+		24BF45E41617717E00D4261E /* woodSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woodSword.png; sourceTree = "<group>"; };
 		24DA5A22160645B300EB1FCF /* Sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sword.png; sourceTree = "<group>"; };
 		24DA5A251606499200EB1FCF /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		24DA5A261606499200EB1FCF /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
@@ -117,6 +133,7 @@
 				B614F9B41605851600400456 /* Ax.png */,
 				B614F9B61605851C00400456 /* Fist.png */,
 				B6C8A5D8160603C8005808C1 /* Weapon.h */,
+				24BF45DA1617715F00D4261E /* fireSword.png */,
 				B6C8A5D9160603C8005808C1 /* Weapon.m */,
 			);
 			name = Weapons;
@@ -222,6 +239,13 @@
 		B660AFCF1605443D00EC8EA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24BF45E01617717500D4261E /* waterSword.png */,
+				24BF45E21617717A00D4261E /* windSword.png */,
+				24BF45E41617717E00D4261E /* woodSword.png */,
+				24BF45DE1617716A00D4261E /* lightSword.png */,
+				24BF45DC1617716500D4261E /* iceSword.png */,
+				24BF45D81617715700D4261E /* energySword.png */,
+				24BF45D51617714A00D4261E /* darkSword.png */,
 				B660AFD01605443D00EC8EA2 /* SamplePickerView-Info.plist */,
 				B660AFD11605443D00EC8EA2 /* InfoPlist.strings */,
 				B660AFD41605443D00EC8EA2 /* main.m */,
@@ -324,6 +348,14 @@
 				B6C8A5E8160610E2005808C1 /* alligator.png in Resources */,
 				B6C8A5EA160610F2005808C1 /* player.png in Resources */,
 				24DA5A23160645B300EB1FCF /* Sword.png in Resources */,
+				24BF45D61617714A00D4261E /* darkSword.png in Resources */,
+				24BF45D91617715700D4261E /* energySword.png in Resources */,
+				24BF45DB1617715F00D4261E /* fireSword.png in Resources */,
+				24BF45DD1617716500D4261E /* iceSword.png in Resources */,
+				24BF45DF1617716A00D4261E /* lightSword.png in Resources */,
+				24BF45E11617717500D4261E /* waterSword.png in Resources */,
+				24BF45E31617717A00D4261E /* windSword.png in Resources */,
+				24BF45E51617717E00D4261E /* woodSword.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
