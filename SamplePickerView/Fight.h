@@ -15,7 +15,13 @@
 
 @property NSManagedObjectContext * managedObjectContext;
 
+@property Player *player;
+
+@property Enemy *currentEnemy;
+
 -(id) initInContext:(NSManagedObjectContext *) context;
+
+-(id) initInContext:(NSManagedObjectContext *) context withPlayer:(Player*) thePlayer withEnemy:(Enemy *) theEnemy;
 
 -(void) playerAttack;
 

@@ -60,4 +60,9 @@
     
 }
 
+-(int) getDamage {
+    int randomNum = [self.damageLow intValue] + arc4random() % ([self.damageHigh intValue] - [self.damageLow intValue]);
+    return randomNum;
+}
+
 @end

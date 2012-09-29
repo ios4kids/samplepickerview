@@ -16,8 +16,19 @@
     return self;
 }
 
+-(id) initInContext:(NSManagedObjectContext *) context withPlayer:(Player*) thePlayer withEnemy:(Enemy *) theEnemy {
+    self = [super init];
+    self.managedObjectContext = context;
+    self.player = thePlayer;
+    self.currentEnemy = theEnemy;
+    return self;
+}
+
 -(void) playerAttack {
     NSLog(@"Here we put the player attack");
+    
+    NSLog(@"%d",[self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon getDamage]);
+    
 }
 
 -(void) enemyAttack {

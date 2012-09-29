@@ -9,6 +9,7 @@
 #import "BattleViewController.h"
 #import "BattleWeaponSelectorViewController.h"
 #import "Fight.h"
+#import "Enemy.h"
 
 @interface BattleViewController ()
 
@@ -23,6 +24,10 @@
 	// Do any additional setup after loading the view.
     self.appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     GameSettings * gameSettings = [GameSettings getGameSettingsInContext:[self.appDelegate managedObjectContext]];
+    
+    Enemy * enemy = [Enemy getEnemyWithName:@"Alligator" inContext:self.appDelegate.managedObjectContext];
+    gameSettings.currentEnemy = enemy;
+    [gameSettings saveInContext:self.appDelegate.managedObjectContext];
     
     self.currentEnemy = [gameSettings pickCurrentEnemy];
     
@@ -61,7 +66,7 @@
 }
 
 - (IBAction)fightButtonPressed:(id)sender {
-    Fight *fight = [[Fight alloc] initInContext:[self.appDelegate managedObjectContext]];
+    Fight *fight = [[Fight alloc] initInContext:[self.appDelegate managedObjectContext] withPlayer:self.player withEnemy:self.currentEnemy];
     
     [fight playerAttack];
     [fight enemyAttack];

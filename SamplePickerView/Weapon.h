@@ -36,5 +36,6 @@
 - (void)removeWeaponHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
 - (void)addWeaponHasManyPlayerWeapons:(NSSet *)values;
 - (void)removeWeaponHasManyPlayerWeapons:(NSSet *)values;
+- (int)getDamage;
 
 @end
