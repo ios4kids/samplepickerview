@@ -14,9 +14,9 @@
 @implementation PlayerWeapon
 
 @dynamic quantity;
-@dynamic playerWeaponBelongsToPlayer;
-@dynamic playerWeaponBelongsToWeapon;
-@dynamic playerWeaponCurrentlySelectedByPlayer;
+@dynamic player;
+@dynamic weapon;
+@dynamic currentlySelectedByPlayer;
 
 
 +(NSArray *) getAllRecordsInContext:(NSManagedObjectContext *)context {

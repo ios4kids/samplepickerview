@@ -14,10 +14,10 @@
 @interface PlayerWeapon : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * quantity;
-@property (nonatomic, retain) Player *playerWeaponBelongsToPlayer;
-@property (nonatomic, retain) Weapon *playerWeaponBelongsToWeapon;
+@property (nonatomic, retain) Player *player;
+@property (nonatomic, retain) Weapon *weapon;
 
-@property (nonatomic, retain) Player *playerWeaponCurrentlySelectedByPlayer;
+@property (nonatomic, retain) Player *currentlySelectedByPlayer;
 
 
 +(NSArray *) getAllRecordsInContext:(NSManagedObjectContext *)context;

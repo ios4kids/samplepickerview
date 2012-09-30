@@ -14,8 +14,8 @@
 @implementation EnemyElement
 
 @dynamic weakness;
-@dynamic enemyElementBelongsToEnemy;
-@dynamic enemyElementBelongsToElement;
+@dynamic enemy;
+@dynamic element;
 
 
 +(EnemyElement *) newInContext:(NSManagedObjectContext *)context {

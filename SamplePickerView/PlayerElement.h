@@ -14,8 +14,8 @@
 @interface PlayerElement : NSManagedObject
 
 @property (nonatomic, retain) NSDecimalNumber * weakness;
-@property (nonatomic, retain) Player *playerElementBelongsToPlayer;
-@property (nonatomic, retain) Element *playerElementBelongsToElement;
+@property (nonatomic, retain) Player *player;
+@property (nonatomic, retain) Element *element;
 
 
 +(NSArray *) getAllRecordsInContext:(NSManagedObjectContext *)context;

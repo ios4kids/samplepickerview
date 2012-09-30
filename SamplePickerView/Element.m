@@ -14,9 +14,9 @@
 
 @dynamic name;
 @dynamic imageName;
-@dynamic elementHasManyPlayerElements;
-@dynamic elementHasManyEnemyElements;
-@dynamic elementHasManyWeapons;
+@dynamic playerElements;
+@dynamic enemyElements;
+@dynamic weapons;
 
 
 +(Element *) newInContext:(NSManagedObjectContext *)context {

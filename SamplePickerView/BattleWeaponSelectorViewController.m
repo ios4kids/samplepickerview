@@ -31,7 +31,7 @@
     self.weaponsPickerView.delegate = self;
     self.weaponsPickerView.dataSource = self;
     
-    self.playerWeapons = [self.player.playerHasManyPlayerWeapons allObjects];
+    self.playerWeapons = [self.player.playerWeapons allObjects];
     
     [self setSelectedRow];
     
@@ -42,7 +42,7 @@
 -(void) setSelectedRow {
     NSInteger count = 0;
     for (PlayerWeapon *currentPlayerWeapon in self.playerWeapons) {
-        if (currentPlayerWeapon.playerWeaponBelongsToWeapon.title == self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon.title) {
+        if (currentPlayerWeapon.weapon.title == self.player.selectedPlayerWeapon.weapon.title) {
             self.selectedPlayerWeapon = [self.playerWeapons objectAtIndex:count];
             [self.weaponsPickerView selectRow:count inComponent:0 animated:YES];
         }
@@ -70,7 +70,7 @@
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return [self.player.playerHasManyPlayerWeapons.allObjects count];
+    return [self.player.playerWeapons.allObjects count];
 }
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
@@ -88,21 +88,21 @@
             forComponent:(NSInteger)component
 {
     PlayerWeapon * playerWeapon = [self.playerWeapons objectAtIndex:row];
-    return playerWeapon.playerWeaponBelongsToWeapon.title;
+    return playerWeapon.weapon.title;
 }
 
 
 -(void) drawWeaponDetails {
     PlayerWeapon *playerWeapon = self.selectedPlayerWeapon;
     if (playerWeapon) {
-        self.weaponTitleLabel.text = playerWeapon.playerWeaponBelongsToWeapon.title;
-        self.weaponDamageLowLabel.text = [playerWeapon.playerWeaponBelongsToWeapon.damageLow stringValue];
-        self.weaponDamageHighLabel.text = [playerWeapon.playerWeaponBelongsToWeapon.damageHigh stringValue];
+        self.weaponTitleLabel.text = playerWeapon.weapon.title;
+        self.weaponDamageLowLabel.text = [playerWeapon.weapon.damageLow stringValue];
+        self.weaponDamageHighLabel.text = [playerWeapon.weapon.damageHigh stringValue];
         
-        UIImage *image = [UIImage imageNamed:playerWeapon.playerWeaponBelongsToWeapon.imageName];
+        UIImage *image = [UIImage imageNamed:playerWeapon.weapon.imageName];
         [self.weaponImageView setImage:image];
         
-        self.currentWeaponLabel.text = self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon.title;
+        self.currentWeaponLabel.text = self.player.selectedPlayerWeapon.weapon.title;
         
         [self.view setNeedsDisplay];
         
@@ -119,7 +119,7 @@
 
 - (IBAction)selectWeaponSelected:(id)sender {
     
-    self.player.playerHasOneSelectedPlayerWeapon = self.selectedPlayerWeapon;
+    self.player.selectedPlayerWeapon = self.selectedPlayerWeapon;
     [self.player saveInContext:self.managedObjectContext];
     [self drawWeaponDetails];
 }

@@ -2,25 +2,25 @@
 //  Enemy.h
 //  SamplePickerView
 //
-//  Created by Alberto Morales on 9/16/12.
+//  Created by Alberto Morales on 9/30/12.
 //  Copyright (c) 2012 Alberto Morales. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "Player.h"
-#import "Enemy.h"
-#import "Element.h"
-#import "EnemyElement.h"
+
+@class EnemyElement, GameSettings;
 
 @interface Enemy : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * imageName;
-@property (nonatomic, retain) NSNumber * damageLow;
 @property (nonatomic, retain) NSNumber * damageHigh;
+@property (nonatomic, retain) NSNumber * damageLow;
 @property (nonatomic, retain) NSNumber * health;
-@property (nonatomic, retain) NSSet *enemyHasManyEnemyElements;
+@property (nonatomic, retain) NSString * imageName;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSSet *enemyElements;
+@property (nonatomic, retain) GameSettings *gameSetting;
 @end
 
 @interface Enemy (CoreDataGeneratedAccessors)
@@ -33,11 +33,14 @@
 
 -(void) saveInContext:(NSManagedObjectContext *) context;
 
-- (void)addEnemyHasManyEnemyElementsObject:(NSManagedObject *)value;
-- (void)removeEnemyHasManyEnemyElementsObject:(NSManagedObject *)value;
-- (void)addEnemyHasManyEnemyElements:(NSSet *)values;
-- (void)removeEnemyHasManyEnemyElements:(NSSet *)values;
+-(void) getsAttackedByPlayer: (Player *)thePlayer andWeapon: (Weapon *) theWeapon andContext: (NSManagedObjectContext *) theContext;
 
--(void) getsAttackedByPlayer: (Player *) thePlayer andWeapon:(Weapon *) theWeapon andContext: (NSManagedObjectContext *) theContext;
+-(float) getWeaknessForElement:(Element *) theElement;
+
+
+- (void)addEnemyElementsObject:(EnemyElement *)value;
+- (void)removeEnemyElementsObject:(EnemyElement *)value;
+- (void)addEnemyElements:(NSSet *)values;
+- (void)removeEnemyElements:(NSSet *)values;
 
 @end

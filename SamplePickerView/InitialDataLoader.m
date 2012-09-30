@@ -90,7 +90,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"woodSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -99,7 +99,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"windSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -108,10 +108,10 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"waterSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
-    NSLog(@"%@", theWeapon.weaponBelongsToElement);
+    NSLog(@"%@", theWeapon.element);
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Light Sword";
@@ -119,7 +119,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"lightSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -128,7 +128,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"iceSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -137,7 +137,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"fireSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -146,7 +146,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"energySword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
@@ -155,7 +155,7 @@
     theWeapon.damageLow = [NSNumber numberWithInt:3];
     theWeapon.price = [[NSDecimalNumber alloc] initWithString:@"30"];
     theWeapon.imageName = @"darkSword.png";
-    theWeapon.weaponBelongsToElement = theElement;
+    theWeapon.element = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
 }
@@ -175,64 +175,60 @@
     // how Earth affects the player
     element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Wind" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Water" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Light" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Ice" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Fire" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"120.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     
     element = [Element getElementWithName:@"Energy" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [playerElement saveInContext:self.managedObjectContext];
     
     element = [Element getElementWithName:@"Darkness" inContext:self.managedObjectContext];
     playerElement = [PlayerElement newInContext:self.managedObjectContext];
-    playerElement.playerElementBelongsToPlayer = player;
-    playerElement.playerElementBelongsToElement = element;
+    playerElement.player = player;
+    playerElement.element = element;
     playerElement.weakness = [[NSDecimalNumber alloc] initWithString:@"110.0"];
     [playerElement saveInContext:self.managedObjectContext];
-    
-    
-    
-    
     
     
     Weapon *weapon;
@@ -240,12 +236,12 @@
     // load as many weapons that the Player will have at the beginning
     weapon = [Weapon getWeaponWithTitle:@"Earth Sword" inContext:self.managedObjectContext];
     PlayerWeapon *playerWeapon = [PlayerWeapon newInContext:self.managedObjectContext];
-    playerWeapon.playerWeaponBelongsToPlayer = player;
-    playerWeapon.playerWeaponBelongsToWeapon = weapon;
+    playerWeapon.player = player;
+    playerWeapon.weapon = weapon;
     [playerWeapon saveInContext:self.managedObjectContext];
     
     //set the current weapon selected by the player
-    player.playerHasOneSelectedPlayerWeapon = playerWeapon;
+    player.selectedPlayerWeapon = playerWeapon;
     [player saveInContext:self.managedObjectContext];
     
 }
@@ -268,64 +264,64 @@
     // how Earth affects the alligator
     element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Water affects the alligator
     element = [Element getElementWithName:@"Water" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"70.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Wind affects the alligator
     element = [Element getElementWithName:@"Wind" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"130.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Light affects the alligator
     element = [Element getElementWithName:@"Light" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"110.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Ice affects the alligator
     element = [Element getElementWithName:@"Ice" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Fire affects the alligator
     element = [Element getElementWithName:@"Fire" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"130.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Energy affects the alligator
     element = [Element getElementWithName:@"Energy" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"150.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Darkness affects the alligator
     element = [Element getElementWithName:@"Darkness" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
@@ -342,64 +338,64 @@
     // how Earth affects the enemy
     element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"170.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Water affects the enemy
     element = [Element getElementWithName:@"Water" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Wind affects the alligator
     element = [Element getElementWithName:@"Wind" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"70.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Light affects the alligator
     element = [Element getElementWithName:@"Light" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Ice affects the enemy
     element = [Element getElementWithName:@"Ice" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"100.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Fire affects the enemy
     element = [Element getElementWithName:@"Fire" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"110.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Energy affects the enemy
     element = [Element getElementWithName:@"Energy" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"90.0"];
     [enemyElement saveInContext:self.managedObjectContext];
     
     // how Darkness affects the enemy
     element = [Element getElementWithName:@"Darkness" inContext:self.managedObjectContext];
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
-    enemyElement.enemyElementBelongsToElement = element;
-    enemyElement.enemyElementBelongsToEnemy = enemy;
+    enemyElement.element = element;
+    enemyElement.enemy = enemy;
     enemyElement.weakness = [[NSDecimalNumber alloc] initWithString:@"120.0"];
     [enemyElement saveInContext:self.managedObjectContext];
 

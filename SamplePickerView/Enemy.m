@@ -2,21 +2,26 @@
 //  Enemy.m
 //  SamplePickerView
 //
-//  Created by Alberto Morales on 9/16/12.
+//  Created by Alberto Morales on 9/30/12.
 //  Copyright (c) 2012 Alberto Morales. All rights reserved.
 //
 
 #import "Enemy.h"
-
+#import "EnemyElement.h"
+#import "GameSettings.h"
+#import "PlayerWeapon.h"
+#import "Player.h"
+#import "Element.h"
 
 @implementation Enemy
 
-@dynamic name;
-@dynamic imageName;
-@dynamic damageLow;
 @dynamic damageHigh;
+@dynamic damageLow;
 @dynamic health;
-@dynamic enemyHasManyEnemyElements;
+@dynamic imageName;
+@dynamic name;
+@dynamic enemyElements;
+@dynamic gameSetting;
 
 
 +(Enemy *) newInContext:(NSManagedObjectContext *)context {
@@ -59,9 +64,10 @@
 
 -(void) getsAttackedByPlayer:(Player *)thePlayer andWeapon:(Weapon *)theWeapon andContext: (NSManagedObjectContext *) theContext {
     
-    int damage = [thePlayer.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon getDamage];
+    int damage = [thePlayer.selectedPlayerWeapon.weapon getDamage];
     
-    Element *element = theWeapon.weaponBelongsToElement;
+    
+    Element *element = theWeapon.element;
     
     float weakness = [self getWeaknessForElement:element];
     
@@ -76,8 +82,8 @@
 
 -(float) getWeaknessForElement:(Element *) theElement {
     float result = 100;
-    for(EnemyElement * currentEnemyElement in self.enemyHasManyEnemyElements) {
-        if (currentEnemyElement.enemyElementBelongsToElement.name == theElement.name) {
+    for(EnemyElement * currentEnemyElement in self.enemyElements) {
+        if (currentEnemyElement.element.name == theElement.name) {
             result = [currentEnemyElement.weakness floatValue];
         }
     }

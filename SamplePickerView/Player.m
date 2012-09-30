@@ -17,9 +17,9 @@
 @dynamic health;
 @dynamic money;
 @dynamic strength;
-@dynamic playerHasManyPlayerWeapons;
-@dynamic playerHasManyPlayerElements;
-@dynamic playerHasOneSelectedPlayerWeapon;
+@dynamic playerWeapons;
+@dynamic playerElements;
+@dynamic selectedPlayerWeapon;
 
 
 

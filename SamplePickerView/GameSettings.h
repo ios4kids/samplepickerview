@@ -2,7 +2,7 @@
 //  GameSettings.h
 //  SamplePickerView
 //
-//  Created by Alberto Morales on 9/16/12.
+//  Created by Alberto Morales on 9/30/12.
 //  Copyright (c) 2012 Alberto Morales. All rights reserved.
 //
 

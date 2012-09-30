@@ -3,9 +3,9 @@
     <entity name="Element" representedClassName="Element" syncable="YES">
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="elementHasManyEnemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="enemyElementBelongsToElement" inverseEntity="EnemyElement" syncable="YES"/>
-        <relationship name="elementHasManyPlayerElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerElement" inverseName="playerElementBelongsToElement" inverseEntity="PlayerElement" syncable="YES"/>
-        <relationship name="elementHasManyWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="weaponBelongsToElement" inverseEntity="Weapon" syncable="YES"/>
+        <relationship name="enemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="element" inverseEntity="EnemyElement" syncable="YES"/>
+        <relationship name="playerElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerElement" inverseName="element" inverseEntity="PlayerElement" syncable="YES"/>
+        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="element" inverseEntity="Weapon" syncable="YES"/>
     </entity>
     <entity name="Enemy" representedClassName="Enemy" syncable="YES">
         <attribute name="damageHigh" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -13,16 +13,16 @@
         <attribute name="health" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="enemyHasManyEnemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="enemyElementBelongsToEnemy" inverseEntity="EnemyElement" syncable="YES"/>
-        <relationship name="enemyHasManyGameSettings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GameSettings" inverseName="currentEnemy" inverseEntity="GameSettings" syncable="YES"/>
+        <relationship name="enemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="enemy" inverseEntity="EnemyElement" syncable="YES"/>
+        <relationship name="gameSetting" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GameSettings" inverseName="currentEnemy" inverseEntity="GameSettings" syncable="YES"/>
     </entity>
     <entity name="EnemyElement" representedClassName="EnemyElement" syncable="YES">
         <attribute name="weakness" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="enemyElementBelongsToElement" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="elementHasManyEnemyElements" inverseEntity="Element" syncable="YES"/>
-        <relationship name="enemyElementBelongsToEnemy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Enemy" inverseName="enemyHasManyEnemyElements" inverseEntity="Enemy" syncable="YES"/>
+        <relationship name="element" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="enemyElements" inverseEntity="Element" syncable="YES"/>
+        <relationship name="enemy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Enemy" inverseName="enemyElements" inverseEntity="Enemy" syncable="YES"/>
     </entity>
     <entity name="GameSettings" representedClassName="GameSettings" syncable="YES">
-        <relationship name="currentEnemy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Enemy" inverseName="enemyHasManyGameSettings" inverseEntity="Enemy" syncable="YES"/>
+        <relationship name="currentEnemy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Enemy" inverseName="gameSetting" inverseEntity="Enemy" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES">
         <attribute name="health" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -30,20 +30,20 @@
         <attribute name="money" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="strength" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="playerHasManyPlayerElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerElement" inverseName="playerElementBelongsToPlayer" inverseEntity="PlayerElement" syncable="YES"/>
-        <relationship name="playerHasManyPlayerWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="playerWeaponBelongsToPlayer" inverseEntity="PlayerWeapon" syncable="YES"/>
-        <relationship name="playerHasOneSelectedPlayerWeapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="playerWeaponCurrentlySelectedByPlayer" inverseEntity="PlayerWeapon" syncable="YES"/>
+        <relationship name="playerElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerElement" inverseName="player" inverseEntity="PlayerElement" syncable="YES"/>
+        <relationship name="playerWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="player" inverseEntity="PlayerWeapon" syncable="YES"/>
+        <relationship name="selectedPlayerWeapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="currentlySelectedByPlayer" inverseEntity="PlayerWeapon" syncable="YES"/>
     </entity>
     <entity name="PlayerElement" representedClassName="PlayerElement" syncable="YES">
         <attribute name="weakness" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="playerElementBelongsToElement" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="elementHasManyPlayerElements" inverseEntity="Element" syncable="YES"/>
-        <relationship name="playerElementBelongsToPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerHasManyPlayerElements" inverseEntity="Player" syncable="YES"/>
+        <relationship name="element" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="playerElements" inverseEntity="Element" syncable="YES"/>
+        <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerElements" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="PlayerWeapon" representedClassName="PlayerWeapon" syncable="YES">
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="playerWeaponBelongsToPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerHasManyPlayerWeapons" inverseEntity="Player" syncable="YES"/>
-        <relationship name="playerWeaponBelongsToWeapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="weaponHasManyPlayerWeapons" inverseEntity="Weapon" syncable="YES"/>
-        <relationship name="playerWeaponCurrentlySelectedByPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerHasOneSelectedPlayerWeapon" inverseEntity="Player" syncable="YES"/>
+        <relationship name="currentlySelectedByPlayer" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="selectedPlayerWeapon" inverseEntity="Player" syncable="YES"/>
+        <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="playerWeapons" inverseEntity="Player" syncable="YES"/>
+        <relationship name="weapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Weapon" inverseName="playerWeapons" inverseEntity="Weapon" syncable="YES"/>
     </entity>
     <entity name="Weapon" representedClassName="Weapon" syncable="YES">
         <attribute name="damageHigh" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -51,17 +51,17 @@
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="weaponBelongsToElement" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="elementHasManyWeapons" inverseEntity="Element" syncable="YES"/>
-        <relationship name="weaponHasManyPlayerWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="playerWeaponBelongsToWeapon" inverseEntity="PlayerWeapon" syncable="YES"/>
+        <relationship name="element" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="weapons" inverseEntity="Element" syncable="YES"/>
+        <relationship name="playerWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="weapon" inverseEntity="PlayerWeapon" syncable="YES"/>
     </entity>
     <elements>
         <element name="Element" positionX="-3330" positionY="-2121" width="200" height="120"/>
         <element name="Enemy" positionX="-3132" positionY="-2412" width="189" height="150"/>
-        <element name="EnemyElement" positionX="-3465" positionY="-2340" width="207" height="88"/>
+        <element name="EnemyElement" positionX="-3465" positionY="-2340" width="207" height="90"/>
         <element name="GameSettings" positionX="-2864" positionY="-2241" width="128" height="60"/>
-        <element name="Player" positionX="-3618" positionY="-1944" width="180" height="163"/>
-        <element name="PlayerElement" positionX="-3600" positionY="-2142" width="198" height="88"/>
-        <element name="PlayerWeapon" positionX="-3303" positionY="-1782" width="198" height="103"/>
-        <element name="Weapon" positionX="-3051" positionY="-2076" width="171" height="148"/>
+        <element name="Player" positionX="-3618" positionY="-1944" width="180" height="165"/>
+        <element name="PlayerElement" positionX="-3600" positionY="-2142" width="198" height="90"/>
+        <element name="PlayerWeapon" positionX="-3303" positionY="-1782" width="198" height="105"/>
+        <element name="Weapon" positionX="-3051" positionY="-2076" width="171" height="150"/>
     </elements>
 </model>

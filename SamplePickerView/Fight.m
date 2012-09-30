@@ -27,7 +27,7 @@
 -(void) playerAttack {
     
     
-    [self.currentEnemy getsAttackedByPlayer:self.player andWeapon:self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon andContext:self.managedObjectContext];
+    [self.currentEnemy getsAttackedByPlayer:self.player andWeapon:self.player.selectedPlayerWeapon.weapon andContext:self.managedObjectContext];
     
     
     

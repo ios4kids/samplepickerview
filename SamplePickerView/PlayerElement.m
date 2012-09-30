@@ -14,8 +14,8 @@
 @implementation PlayerElement
 
 @dynamic weakness;
-@dynamic playerElementBelongsToPlayer;
-@dynamic playerElementBelongsToElement;
+@dynamic player;
+@dynamic element;
 
 
 +(PlayerElement *) newInContext:(NSManagedObjectContext *)context {

@@ -18,8 +18,8 @@
 @dynamic imageName;
 @dynamic price;
 @dynamic title;
-@dynamic weaponHasManyPlayerWeapons;
-@dynamic weaponBelongsToElement;
+@dynamic playerWeapons;
+@dynamic element;
 
 
 +(Weapon *) newInContext:(NSManagedObjectContext *)context {

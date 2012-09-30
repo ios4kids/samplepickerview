@@ -14,8 +14,8 @@
 @interface EnemyElement : NSManagedObject
 
 @property (nonatomic, retain) NSDecimalNumber * weakness;
-@property (nonatomic, retain) Enemy *enemyElementBelongsToEnemy;
-@property (nonatomic, retain) Element *enemyElementBelongsToElement;
+@property (nonatomic, retain) Enemy *enemy;
+@property (nonatomic, retain) Element *element;
 
 
 +(NSArray *) getAllRecordsInContext:(NSManagedObjectContext *)context;

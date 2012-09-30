@@ -18,8 +18,8 @@
 @property (nonatomic, retain) NSString * imageName;
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSSet *weaponHasManyPlayerWeapons;
-@property (nonatomic, retain) Element *weaponBelongsToElement;
+@property (nonatomic, retain) NSSet *playerWeapons;
+@property (nonatomic, retain) Element *element;
 @end
 
 @interface Weapon (CoreDataGeneratedAccessors)
@@ -32,10 +32,10 @@
 
 -(void) saveInContext:(NSManagedObjectContext *) context;
 
-- (void)addWeaponHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
-- (void)removeWeaponHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
-- (void)addWeaponHasManyPlayerWeapons:(NSSet *)values;
-- (void)removeWeaponHasManyPlayerWeapons:(NSSet *)values;
+- (void)addWeaponPlayerWeaponsObject:(PlayerWeapon *)value;
+- (void)removeWeaponPlayerWeaponsObject:(PlayerWeapon *)value;
+- (void)addWeaponPlayerWeapons:(NSSet *)values;
+- (void)removeWeaponPlayerWeapons:(NSSet *)values;
 - (int)getDamage;
 
 @end

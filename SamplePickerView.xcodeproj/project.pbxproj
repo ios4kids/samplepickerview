@@ -36,17 +36,17 @@
 		B660AFEC1605449F00EC8EA2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B660AFEB1605449F00EC8EA2 /* MainViewController.m */; };
 		B660AFF616054DC200EC8EA2 /* BattleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B660AFF516054DC200EC8EA2 /* BattleViewController.m */; };
 		B67C93BB1606870500293B63 /* Fight.m in Sources */ = {isa = PBXBuildFile; fileRef = B67C93BA1606870500293B63 /* Fight.m */; };
-		B6C7AAC3160618B7002930F0 /* GameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7AAC2160618B7002930F0 /* GameSettings.m */; };
 		B6C83E9F16054E4000390BD1 /* BattleWeaponSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C83E9E16054E4000390BD1 /* BattleWeaponSelectorViewController.m */; };
 		B6C8A5D01606030D005808C1 /* Element.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5CF1606030D005808C1 /* Element.m */; };
 		B6C8A5D416060335005808C1 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5D316060335005808C1 /* Player.m */; };
 		B6C8A5D716060381005808C1 /* PlayerWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5D616060381005808C1 /* PlayerWeapon.m */; };
 		B6C8A5DA160603C8005808C1 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5D9160603C8005808C1 /* Weapon.m */; };
-		B6C8A5DD16060416005808C1 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5DC16060416005808C1 /* Enemy.m */; };
 		B6C8A5E016060425005808C1 /* EnemyElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5DF16060425005808C1 /* EnemyElement.m */; };
 		B6C8A5E316060439005808C1 /* PlayerElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8A5E216060439005808C1 /* PlayerElement.m */; };
 		B6C8A5E8160610E2005808C1 /* alligator.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C8A5E7160610E2005808C1 /* alligator.png */; };
 		B6C8A5EA160610F2005808C1 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C8A5E9160610F2005808C1 /* player.png */; };
+		B6FFCED11618C855003AC4E7 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFCED01618C855003AC4E7 /* Enemy.m */; };
+		B6FFCED41618C8E2003AC4E7 /* GameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B6FFCED31618C8E2003AC4E7 /* GameSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +89,6 @@
 		B660AFF516054DC200EC8EA2 /* BattleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleViewController.m; sourceTree = "<group>"; };
 		B67C93B91606870500293B63 /* Fight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fight.h; sourceTree = "<group>"; };
 		B67C93BA1606870500293B63 /* Fight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fight.m; sourceTree = "<group>"; };
-		B6C7AAC1160618B7002930F0 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
-		B6C7AAC2160618B7002930F0 /* GameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettings.m; sourceTree = "<group>"; };
 		B6C83E9D16054E4000390BD1 /* BattleWeaponSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleWeaponSelectorViewController.h; sourceTree = "<group>"; };
 		B6C83E9E16054E4000390BD1 /* BattleWeaponSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleWeaponSelectorViewController.m; sourceTree = "<group>"; };
 		B6C8A5CE1606030D005808C1 /* Element.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Element.h; sourceTree = "<group>"; };
@@ -101,14 +99,16 @@
 		B6C8A5D616060381005808C1 /* PlayerWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerWeapon.m; sourceTree = "<group>"; };
 		B6C8A5D8160603C8005808C1 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		B6C8A5D9160603C8005808C1 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
-		B6C8A5DB16060416005808C1 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		B6C8A5DC16060416005808C1 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		B6C8A5DE16060425005808C1 /* EnemyElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyElement.h; sourceTree = "<group>"; };
 		B6C8A5DF16060425005808C1 /* EnemyElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyElement.m; sourceTree = "<group>"; };
 		B6C8A5E116060439005808C1 /* PlayerElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerElement.h; sourceTree = "<group>"; };
 		B6C8A5E216060439005808C1 /* PlayerElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerElement.m; sourceTree = "<group>"; };
 		B6C8A5E7160610E2005808C1 /* alligator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alligator.png; sourceTree = "<group>"; };
 		B6C8A5E9160610F2005808C1 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		B6FFCECF1618C855003AC4E7 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		B6FFCED01618C855003AC4E7 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		B6FFCED21618C8E2003AC4E7 /* GameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettings.h; sourceTree = "<group>"; };
+		B6FFCED31618C8E2003AC4E7 /* GameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,8 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C8A5E7160610E2005808C1 /* alligator.png */,
-				B6C8A5DB16060416005808C1 /* Enemy.h */,
-				B6C8A5DC16060416005808C1 /* Enemy.m */,
+				B6FFCECF1618C855003AC4E7 /* Enemy.h */,
+				B6FFCED01618C855003AC4E7 /* Enemy.m */,
 				B6C8A5DE16060425005808C1 /* EnemyElement.h */,
 				B6C8A5DF16060425005808C1 /* EnemyElement.m */,
 			);
@@ -281,8 +281,8 @@
 		B6C8A5EB160611CE005808C1 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				B6C7AAC1160618B7002930F0 /* GameSettings.h */,
-				B6C7AAC2160618B7002930F0 /* GameSettings.m */,
+				B6FFCED21618C8E2003AC4E7 /* GameSettings.h */,
+				B6FFCED31618C8E2003AC4E7 /* GameSettings.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -378,12 +378,12 @@
 				B6C8A5D416060335005808C1 /* Player.m in Sources */,
 				B6C8A5D716060381005808C1 /* PlayerWeapon.m in Sources */,
 				B6C8A5DA160603C8005808C1 /* Weapon.m in Sources */,
-				B6C8A5DD16060416005808C1 /* Enemy.m in Sources */,
 				B6C8A5E016060425005808C1 /* EnemyElement.m in Sources */,
 				B6C8A5E316060439005808C1 /* PlayerElement.m in Sources */,
-				B6C7AAC3160618B7002930F0 /* GameSettings.m in Sources */,
 				24DA5A271606499200EB1FCF /* Store.m in Sources */,
 				B67C93BB1606870500293B63 /* Fight.m in Sources */,
+				B6FFCED11618C855003AC4E7 /* Enemy.m in Sources */,
+				B6FFCED41618C8E2003AC4E7 /* GameSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

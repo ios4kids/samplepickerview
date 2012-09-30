@@ -20,10 +20,10 @@
 @property (nonatomic, retain) NSNumber * health;
 @property (nonatomic, retain) NSDecimalNumber * money;
 @property (nonatomic, retain) NSNumber * strength;
-@property (nonatomic, retain) NSSet *playerHasManyPlayerWeapons;
-@property (nonatomic, retain) NSSet *playerHasManyPlayerElements;
+@property (nonatomic, retain) NSSet *playerWeapons;
+@property (nonatomic, retain) NSSet *playerElements;
 
-@property (nonatomic, retain) PlayerWeapon *playerHasOneSelectedPlayerWeapon;
+@property (nonatomic, retain) PlayerWeapon *selectedPlayerWeapon;
 
 @end
 
@@ -38,14 +38,14 @@
 
 -(void) saveInContext:(NSManagedObjectContext *) context;
 
-- (void)addPlayerHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
-- (void)removePlayerHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
-- (void)addPlayerHasManyPlayerWeapons:(NSSet *)values;
-- (void)removePlayerHasManyPlayerWeapons:(NSSet *)values;
+- (void)addPlayePlayerWeaponsObject:(PlayerWeapon *)value;
+- (void)removePlayerPlayerWeaponsObject:(PlayerWeapon *)value;
+- (void)addPlayerPlayerWeapons:(NSSet *)values;
+- (void)removePlayerPlayerWeapons:(NSSet *)values;
 
-- (void)addPlayerHasManyPlayerElementsObject:(NSManagedObject *)value;
-- (void)removePlayerHasManyPlayerElementsObject:(NSManagedObject *)value;
-- (void)addPlayerHasManyPlayerElements:(NSSet *)values;
-- (void)removePlayerHasManyPlayerElements:(NSSet *)values;
+- (void)addPlayerPlayerElementsObject:(NSManagedObject *)value;
+- (void)removePlayerPlayerElementsObject:(NSManagedObject *)value;
+- (void)addPlayerPlayerElements:(NSSet *)values;
+- (void)removePlayerPlayerElements:(NSSet *)values;
 
 @end

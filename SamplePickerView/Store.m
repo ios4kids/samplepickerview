@@ -35,9 +35,9 @@
 
 -(BOOL) alreadyOwnsWeapon {
 
-    NSArray * playerWeapons = [self.player.playerHasManyPlayerWeapons allObjects];
+    NSArray * playerWeapons = [self.player.playerWeapons allObjects];
     for (PlayerWeapon *playerWeapon in playerWeapons) {
-        if (self.weapon.title == playerWeapon.playerWeaponBelongsToWeapon.title) {
+        if (self.weapon.title == playerWeapon.weapon.title) {
             self.errorMessage = [self.errorMessage stringByAppendingString:@"You already own the weapon"];
             return YES;
         }
@@ -47,8 +47,8 @@
 
 -(void)makePurchase {
     PlayerWeapon *playerWeapon = [PlayerWeapon newInContext:self.managedObjectContext];
-    playerWeapon.playerWeaponBelongsToPlayer = self.player;
-    playerWeapon.playerWeaponBelongsToWeapon = self.weapon;
+    playerWeapon.player = self.player;
+    playerWeapon.weapon = self.weapon;
     [playerWeapon saveInContext:self.managedObjectContext];
     
     self.player.money = [self.player.money decimalNumberBySubtracting:self.weapon.price];

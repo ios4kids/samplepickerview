@@ -16,9 +16,9 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * imageName;
 
-@property (nonatomic, retain) NSManagedObject *elementHasManyPlayerElements;
-@property (nonatomic, retain) NSManagedObject *elementHasManyEnemyElements;
-@property (nonatomic, retain) Weapon *elementHasManyWeapons;
+@property (nonatomic, retain) NSManagedObject *playerElements;
+@property (nonatomic, retain) NSManagedObject *enemyElements;
+@property (nonatomic, retain) Weapon *weapons;
 
 
 +(Element *) newInContext:(NSManagedObjectContext *)context;

@@ -74,7 +74,7 @@
     
     self.playerHealthLabel.text = [self.player.health stringValue];
     
-    self.currentPlayerWeaponLabel.text = self.player.playerHasOneSelectedPlayerWeapon.playerWeaponBelongsToWeapon.title;
+    self.currentPlayerWeaponLabel.text = self.player.selectedPlayerWeapon.weapon.title;
 
 }
 @end
