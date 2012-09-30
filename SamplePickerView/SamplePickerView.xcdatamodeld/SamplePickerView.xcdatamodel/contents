@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12B19" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Element" representedClassName="Element" syncable="YES">
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="elementHasManyEnemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="enemyElementBelongsToElement" inverseEntity="EnemyElement" syncable="YES"/>
         <relationship name="elementHasManyPlayerElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerElement" inverseName="playerElementBelongsToElement" inverseEntity="PlayerElement" syncable="YES"/>
         <relationship name="elementHasManyWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weapon" inverseName="weaponBelongsToElement" inverseEntity="Weapon" syncable="YES"/>
+        <relationship name="enemyAttackElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyAttackElement" inverseName="element" inverseEntity="EnemyAttackElement" syncable="YES"/>
     </entity>
     <entity name="Enemy" representedClassName="Enemy" syncable="YES">
         <attribute name="damageHigh" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -13,8 +14,13 @@
         <attribute name="health" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="enemyAttackElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyAttackElement" inverseName="enemy" inverseEntity="EnemyAttackElement" syncable="YES"/>
         <relationship name="enemyHasManyEnemyElements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnemyElement" inverseName="enemyElementBelongsToEnemy" inverseEntity="EnemyElement" syncable="YES"/>
         <relationship name="enemyHasManyGameSettings" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="GameSettings" inverseName="currentEnemy" inverseEntity="GameSettings" syncable="YES"/>
+    </entity>
+    <entity name="EnemyAttackElement" representedClassName="EnemyAttackElement" syncable="YES">
+        <relationship name="element" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Element" inverseName="enemyAttackElements" inverseEntity="Element" syncable="YES"/>
+        <relationship name="enemy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Enemy" inverseName="enemyAttackElements" inverseEntity="Enemy" syncable="YES"/>
     </entity>
     <entity name="EnemyElement" representedClassName="EnemyElement" syncable="YES">
         <attribute name="weakness" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -55,13 +61,14 @@
         <relationship name="weaponHasManyPlayerWeapons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlayerWeapon" inverseName="playerWeaponBelongsToWeapon" inverseEntity="PlayerWeapon" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Element" positionX="-3330" positionY="-2121" width="200" height="120"/>
-        <element name="Enemy" positionX="-3132" positionY="-2412" width="189" height="150"/>
+        <element name="Element" positionX="-3330" positionY="-2121" width="200" height="135"/>
+        <element name="Enemy" positionX="-3132" positionY="-2412" width="189" height="165"/>
         <element name="EnemyElement" positionX="-3465" positionY="-2340" width="207" height="88"/>
         <element name="GameSettings" positionX="-2864" positionY="-2241" width="128" height="60"/>
         <element name="Player" positionX="-3618" positionY="-1944" width="180" height="163"/>
         <element name="PlayerElement" positionX="-3600" positionY="-2142" width="198" height="88"/>
         <element name="PlayerWeapon" positionX="-3303" positionY="-1782" width="198" height="103"/>
         <element name="Weapon" positionX="-3051" positionY="-2076" width="171" height="148"/>
+        <element name="EnemyAttackElement" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

@@ -28,4 +28,6 @@
 
 -(void) enemyAttack;
 
+- (void)playerGetsAttackedByEnemy;
+
 @end

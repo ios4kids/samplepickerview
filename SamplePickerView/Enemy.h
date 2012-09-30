@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSNumber * damageHigh;
 @property (nonatomic, retain) NSNumber * health;
 @property (nonatomic, retain) NSSet *enemyHasManyEnemyElements;
+@property (nonatomic, retain) NSSet *enemyAttackElements;
 @end
 
 @interface Enemy (CoreDataGeneratedAccessors)
@@ -37,7 +38,7 @@
 - (void)removeEnemyHasManyEnemyElementsObject:(NSManagedObject *)value;
 - (void)addEnemyHasManyEnemyElements:(NSSet *)values;
 - (void)removeEnemyHasManyEnemyElements:(NSSet *)values;
-
+-(int) getDamage;
 -(void) getsAttackedByPlayer: (Player *) thePlayer andWeapon:(Weapon *) theWeapon andContext: (NSManagedObjectContext *) theContext;
-
+-(Element *) getAttackElement;
 @end

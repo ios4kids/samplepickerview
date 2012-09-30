@@ -7,7 +7,7 @@
 //
 
 #import "Enemy.h"
-
+#import "EnemyAttackElement.h"
 
 @implementation Enemy
 
@@ -17,6 +17,8 @@
 @dynamic damageHigh;
 @dynamic health;
 @dynamic enemyHasManyEnemyElements;
+@dynamic enemyAttackElements;
+
 
 
 +(Enemy *) newInContext:(NSManagedObjectContext *)context {
@@ -84,4 +86,18 @@
     return result;
 }
 
+-(int) getDamage {
+    int randomNum = [self.damageLow intValue] + arc4random() % ([self.damageHigh intValue] - [self.damageLow intValue]);
+    return randomNum;
+}
+
+-(Element *) getAttackElement {
+    
+    
+    int randomNum = arc4random() % ([[self.enemyAttackElements allObjects] count]-1);
+    
+    EnemyAttackElement * attackElement = [[self.enemyAttackElements allObjects] objectAtIndex:randomNum];
+    
+    return attackElement.element;
+}
 @end

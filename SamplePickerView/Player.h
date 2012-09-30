@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Weapon.h"
-#import "PlayerWeapon.h"
 
-@class PlayerWeapon;
+#import "Weapon.h"
+#import "Element.h"
+#import "PlayerWeapon.h"
+#import "PlayerElement.h"
+
 
 @interface Player : NSManagedObject
 
@@ -36,6 +38,8 @@
 
 +(Player *) getPlayerInContext:(NSManagedObjectContext *)context;
 
+-(float) getWeaknessForElement:(Element *) theElement;
+
 -(void) saveInContext:(NSManagedObjectContext *) context;
 
 - (void)addPlayerHasManyPlayerWeaponsObject:(PlayerWeapon *)value;
@@ -47,5 +51,8 @@
 - (void)removePlayerHasManyPlayerElementsObject:(NSManagedObject *)value;
 - (void)addPlayerHasManyPlayerElements:(NSSet *)values;
 - (void)removePlayerHasManyPlayerElements:(NSSet *)values;
+
+
+
 
 @end

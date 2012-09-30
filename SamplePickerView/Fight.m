@@ -35,7 +35,23 @@
 }
 
 -(void) enemyAttack {
-    NSLog(@"Here we add the enemy attack");
+    [self playerGetsAttackedByEnemy];
+}
+
+- (void) playerGetsAttackedByEnemy{
+    
+    int damage = [self.currentEnemy getDamage];
+    
+    Element *element = [self.currentEnemy getAttackElement];
+    
+    float weakness = [self.player getWeaknessForElement:element];
+    
+    float overallDamage = (float) damage/100.0 * weakness;
+    
+    self.player.health = [NSNumber numberWithFloat:([self.player.health floatValue] - overallDamage)];
+    
+    [self.player saveInContext:self.managedObjectContext];
+    
 }
 
 @end

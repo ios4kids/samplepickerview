@@ -7,7 +7,7 @@
 //
 
 #import "Player.h"
-#import "PlayerWeapon.h"
+
 
 
 @implementation Player
@@ -56,6 +56,19 @@
     [context save:&error];
     
 }
+
+-(float) getWeaknessForElement:(Element *) theElement {
+    float result = 100;
+    for(PlayerElement * playerElement in self.playerHasManyPlayerElements) {
+        if (playerElement.playerElementBelongsToElement.name == theElement.name) {
+            result = [playerElement.weakness floatValue];
+        }
+    }
+    return result;
+}
+
+
+
 
 
 @end

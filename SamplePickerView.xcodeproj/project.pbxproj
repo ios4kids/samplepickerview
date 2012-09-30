@@ -15,6 +15,7 @@
 		24BF45E11617717500D4261E /* waterSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E01617717500D4261E /* waterSword.png */; };
 		24BF45E31617717A00D4261E /* windSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E21617717A00D4261E /* windSword.png */; };
 		24BF45E51617717E00D4261E /* woodSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45E41617717E00D4261E /* woodSword.png */; };
+		24C533DD1618D5C500EBB749 /* EnemyAttackElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C533DC1618D5C500EBB749 /* EnemyAttackElement.m */; };
 		24DA5A23160645B300EB1FCF /* Sword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24DA5A22160645B300EB1FCF /* Sword.png */; };
 		24DA5A271606499200EB1FCF /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DA5A261606499200EB1FCF /* Store.m */; };
 		B614F9B51605851600400456 /* Ax.png in Resources */ = {isa = PBXBuildFile; fileRef = B614F9B41605851600400456 /* Ax.png */; };
@@ -58,6 +59,8 @@
 		24BF45E01617717500D4261E /* waterSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterSword.png; sourceTree = "<group>"; };
 		24BF45E21617717A00D4261E /* windSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = windSword.png; sourceTree = "<group>"; };
 		24BF45E41617717E00D4261E /* woodSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woodSword.png; sourceTree = "<group>"; };
+		24C533DB1618D5C500EBB749 /* EnemyAttackElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyAttackElement.h; sourceTree = "<group>"; };
+		24C533DC1618D5C500EBB749 /* EnemyAttackElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyAttackElement.m; sourceTree = "<group>"; };
 		24DA5A22160645B300EB1FCF /* Sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sword.png; sourceTree = "<group>"; };
 		24DA5A251606499200EB1FCF /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		24DA5A261606499200EB1FCF /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C8A5E7160610E2005808C1 /* alligator.png */,
+				24C533DB1618D5C500EBB749 /* EnemyAttackElement.h */,
+				24C533DC1618D5C500EBB749 /* EnemyAttackElement.m */,
 				B6C8A5DB16060416005808C1 /* Enemy.h */,
 				B6C8A5DC16060416005808C1 /* Enemy.m */,
 				B6C8A5DE16060425005808C1 /* EnemyElement.h */,
@@ -384,6 +389,7 @@
 				B6C7AAC3160618B7002930F0 /* GameSettings.m in Sources */,
 				24DA5A271606499200EB1FCF /* Store.m in Sources */,
 				B67C93BB1606870500293B63 /* Fight.m in Sources */,
+				24C533DD1618D5C500EBB749 /* EnemyAttackElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

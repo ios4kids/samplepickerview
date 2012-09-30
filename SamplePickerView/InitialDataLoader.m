@@ -7,6 +7,7 @@
 //
 
 #import "InitialDataLoader.h"
+#import "EnemyAttackElement.h"
 
 @implementation InitialDataLoader
 
@@ -93,6 +94,8 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
+    
+     theElement = [Element getElementWithName:@"Wind" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Wind Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -102,6 +105,7 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
+    theElement = [Element getElementWithName:@"Water" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Water Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -111,8 +115,7 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
-    NSLog(@"%@", theWeapon.weaponBelongsToElement);
-    
+    theElement = [Element getElementWithName:@"Light" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Light Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -122,6 +125,7 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
+    theElement = [Element getElementWithName:@"Ice" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Ice Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -130,7 +134,8 @@
     theWeapon.imageName = @"iceSword.png";
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
-    
+   
+    theElement = [Element getElementWithName:@"Fire" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Fire Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -140,6 +145,7 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
+    theElement = [Element getElementWithName:@"Energy" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Energy Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -149,6 +155,7 @@
     theWeapon.weaponBelongsToElement = theElement;
     [theWeapon saveInContext:self.managedObjectContext];
     
+    theElement = [Element getElementWithName:@"Darkness" inContext:self.managedObjectContext];
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Dark Sword";
     theWeapon.damageHigh = [NSNumber numberWithInt:9];
@@ -254,19 +261,37 @@
     Enemy * enemy;
     Element * element;
     EnemyElement * enemyElement;
+    EnemyAttackElement * enemyAttackElement;
     
     enemy = [Enemy newInContext:self.managedObjectContext];
     enemy.name = @"Alligator";
-    enemy.damageHigh = [NSNumber numberWithInt:15];
-    enemy.damageLow = [NSNumber numberWithInt:3];
-    enemy.health = [NSNumber numberWithInt:50];
+    enemy.damageHigh = [NSNumber numberWithInt:8];
+    enemy.damageLow = [NSNumber numberWithInt:2];
+    enemy.health = [NSNumber numberWithInt:120];
 
     enemy.imageName = @"alligator.png";
     
     [enemy saveInContext:self.managedObjectContext];
     
+    
+    //attack elements
+    element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
+    enemyAttackElement = [EnemyAttackElement newInContext:self.managedObjectContext];
+    enemyAttackElement.element = element;
+    enemyAttackElement.enemy = enemy;
+    [enemyAttackElement saveInContext:self.managedObjectContext];
+    
+    element = [Element getElementWithName:@"Water" inContext:self.managedObjectContext];
+    enemyAttackElement = [EnemyAttackElement newInContext:self.managedObjectContext];
+    enemyAttackElement.element = element;
+    enemyAttackElement.enemy = enemy;
+    [enemyAttackElement saveInContext:self.managedObjectContext];
+    
+    NSLog(@"%@", [enemy.enemyAttackElements allObjects]);
+
     // how Earth affects the alligator
     element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
+
     enemyElement = [EnemyElement newInContext:self.managedObjectContext];
     enemyElement.enemyElementBelongsToElement = element;
     enemyElement.enemyElementBelongsToEnemy = enemy;
@@ -334,9 +359,9 @@
     enemy = [Enemy newInContext:self.managedObjectContext];
     enemy.name = @"Hawk";
     enemy.imageName = @"hawk.png";
-    enemy.damageHigh = [NSNumber numberWithInt:8];
-    enemy.damageLow = [NSNumber numberWithInt:2];
-    enemy.health = [NSNumber numberWithInt:110];
+    enemy.damageHigh = [NSNumber numberWithInt:15];
+    enemy.damageLow = [NSNumber numberWithInt:5];
+    enemy.health = [NSNumber numberWithInt:70];
     [enemy saveInContext:self.managedObjectContext];
     
     // how Earth affects the enemy
