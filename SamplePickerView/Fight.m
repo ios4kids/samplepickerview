@@ -12,27 +12,23 @@
 
 -(id) initInContext:(NSManagedObjectContext *)context {
     self = [super init];
+    
     self.managedObjectContext = context;
     
     self.gameSettings = [GameSettings getGameSettingsInContext:self.managedObjectContext];
     
-    self.player = [Player getPlayerInContext:self.managedObjectContext];
+    
     
     self.currentEnemy = [Enemy getEnemyWithName:@"Alligator" inContext:self.managedObjectContext];
                          
     self.gameSettings.currentEnemy = self.currentEnemy;
     [self.gameSettings saveInContext:self.managedObjectContext];
     
+    self.player = [Player getPlayerInContext:self.managedObjectContext];
     return self;
 }
 
--(id) initInContext:(NSManagedObjectContext *) context withPlayer:(Player*) thePlayer withEnemy:(Enemy *) theEnemy {
-    self = [super init];
-    self.managedObjectContext = context;
-    self.player = thePlayer;
-    self.currentEnemy = theEnemy;
-    return self;
-}
+
 
 -(void) playerAttack {
     

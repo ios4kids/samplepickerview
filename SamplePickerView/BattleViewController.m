@@ -22,7 +22,7 @@
 	// Do any additional setup after loading the view.
     self.appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
 
-    self.fight = [[Fight alloc] initInContext:[self.appDelegate managedObjectContext] withPlayer:self.player withEnemy:self.currentEnemy];
+    self.fight = [[Fight alloc] initInContext:[self.appDelegate managedObjectContext]];
     
     
     self.player = self.fight.player;
@@ -31,10 +31,6 @@
     [self.playerImageView setImage:[UIImage imageNamed:self.player.imageName]];
     [self.enemyImageView setImage:[UIImage imageNamed:self.currentEnemy.imageName]];
     [self refreshDisplay];
-    
-    
-    
-    
 
 }
 
@@ -54,7 +50,8 @@
     
     if ([[segue identifier] isEqualToString:@"battleToWeaponsController"]) {
         BattleWeaponSelectorViewController * controller = [segue destinationViewController];
-        controller.player = self.player;
+        
+        controller.player = self.fight.player;
         controller.appDelegate = self.appDelegate;
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0KO-LP-cBX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0KO-LP-cBX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -270,7 +270,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VHX-Cq-PJe" kind="modal" id="0rO-Xe-q4m"/>
+                                    <segue destination="VHX-Cq-PJe" kind="modal" identifier="battleToWeaponsController" id="0rO-Xe-q4m"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3B-En-SdP">
@@ -490,7 +490,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5Uq-TS-geT" kind="modal" id="24J-pX-9y0"/>
+                                    <segue destination="5Uq-TS-geT" kind="modal" identifier="" id="24J-pX-9y0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -601,7 +601,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="24J-pX-9y0"/>
         <segue reference="iMo-i5-DoC"/>
-        <segue reference="eqA-T8-SpU"/>
     </inferredMetricsTieBreakers>
 </document>

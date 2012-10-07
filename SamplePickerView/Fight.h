@@ -24,7 +24,7 @@
 
 -(id) initInContext:(NSManagedObjectContext *) context;
 
--(id) initInContext:(NSManagedObjectContext *) context withPlayer:(Player*) thePlayer withEnemy:(Enemy *) theEnemy;
+
 
 -(void) playerAttack;
 

@@ -18,7 +18,7 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    NSLog(@"here");
+    
     return self;
 }
 
@@ -33,7 +33,7 @@
     self.weaponsPickerView.dataSource = self;
     
     self.playerWeapons = [self.player.playerHasManyPlayerWeapons allObjects];
-    
+
     [self setSelectedRow];
     
     [self drawWeaponDetails];

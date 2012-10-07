@@ -36,8 +36,6 @@
     element.imageName = @"earth.png";
     [element saveInContext:self.managedObjectContext];
     
-    NSLog(@"%@", element);
-    
     element = [Element newInContext:self.managedObjectContext];
     element.name = @"Wind";
     element.imageName = @"wind.png";
@@ -83,7 +81,6 @@
     Element * theElement;
     
     theElement = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
-    NSLog(@"%@", theElement);
     
     theWeapon = [Weapon newInContext:self.managedObjectContext];
     theWeapon.title = @"Earth Sword";
@@ -287,8 +284,6 @@
     enemyAttackElement.enemy = enemy;
     [enemyAttackElement saveInContext:self.managedObjectContext];
     
-    NSLog(@"%@", [enemy.enemyAttackElements allObjects]);
-
     // how Earth affects the alligator
     element = [Element getElementWithName:@"Earth" inContext:self.managedObjectContext];
 
