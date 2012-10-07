@@ -18,13 +18,14 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
-    
+    NSLog(@"here");
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     self.managedObjectContext = [self.appDelegate managedObjectContext];
     

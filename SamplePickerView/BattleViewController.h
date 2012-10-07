@@ -10,7 +10,9 @@
 #import "Enemy.h"
 #import "GameSettings.h"
 #import "AppDelegate.h"
+#import "Fight.h"
 #import "Player.h"
+#import "Enemy.h"
 
 @interface BattleViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *playerImageView;
@@ -22,6 +24,7 @@
 
 @property Enemy * currentEnemy;
 @property Player * player;
+@property Fight * fight;
 
 @property AppDelegate * appDelegate;
 - (IBAction)fightButtonPressed:(id)sender;

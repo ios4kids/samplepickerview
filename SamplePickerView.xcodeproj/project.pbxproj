@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247D7E3C1621D1500065D71F /* BattleGameSlidesOne.png in Resources */ = {isa = PBXBuildFile; fileRef = 247D7E3B1621D1500065D71F /* BattleGameSlidesOne.png */; };
+		247D7E3F1621D78E0065D71F /* BattleGameSlidesbattle.png in Resources */ = {isa = PBXBuildFile; fileRef = 247D7E3E1621D78E0065D71F /* BattleGameSlidesbattle.png */; };
+		247D7E411621D8690065D71F /* BattleGameSlidesInn.png in Resources */ = {isa = PBXBuildFile; fileRef = 247D7E401621D8690065D71F /* BattleGameSlidesInn.png */; };
 		24BF45D61617714A00D4261E /* darkSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45D51617714A00D4261E /* darkSword.png */; };
 		24BF45D91617715700D4261E /* energySword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45D81617715700D4261E /* energySword.png */; };
 		24BF45DB1617715F00D4261E /* fireSword.png in Resources */ = {isa = PBXBuildFile; fileRef = 24BF45DA1617715F00D4261E /* fireSword.png */; };
@@ -51,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		247D7E3B1621D1500065D71F /* BattleGameSlidesOne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BattleGameSlidesOne.png; sourceTree = "<group>"; };
+		247D7E3E1621D78E0065D71F /* BattleGameSlidesbattle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BattleGameSlidesbattle.png; sourceTree = "<group>"; };
+		247D7E401621D8690065D71F /* BattleGameSlidesInn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BattleGameSlidesInn.png; sourceTree = "<group>"; };
 		24BF45D51617714A00D4261E /* darkSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = darkSword.png; sourceTree = "<group>"; };
 		24BF45D81617715700D4261E /* energySword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = energySword.png; sourceTree = "<group>"; };
 		24BF45DA1617715F00D4261E /* fireSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireSword.png; sourceTree = "<group>"; };
@@ -242,6 +248,9 @@
 		B660AFCF1605443D00EC8EA2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				247D7E401621D8690065D71F /* BattleGameSlidesInn.png */,
+				247D7E3E1621D78E0065D71F /* BattleGameSlidesbattle.png */,
+				247D7E3B1621D1500065D71F /* BattleGameSlidesOne.png */,
 				24BF45E01617717500D4261E /* waterSword.png */,
 				24BF45E21617717A00D4261E /* windSword.png */,
 				24BF45E41617717E00D4261E /* woodSword.png */,
@@ -361,6 +370,9 @@
 				24BF45E11617717500D4261E /* waterSword.png in Resources */,
 				24BF45E31617717A00D4261E /* windSword.png in Resources */,
 				24BF45E51617717E00D4261E /* woodSword.png in Resources */,
+				247D7E3C1621D1500065D71F /* BattleGameSlidesOne.png in Resources */,
+				247D7E3F1621D78E0065D71F /* BattleGameSlidesbattle.png in Resources */,
+				247D7E411621D8690065D71F /* BattleGameSlidesInn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
